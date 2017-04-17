@@ -19,11 +19,23 @@ if (rect1.x < rect2.x + rect2.width &&
 }
 ```
 
-Van DOM elementen kan je opvragen wat de x,y, hoogte en breedte zijn, en dan bovenstaande formule uitvoeren om te zien of ze elkaar raken:
-
+Je moet dan wel in je game object deze properties aanmaken:
 ```
-var rect1:ClientRect = obj.getBoundingClientRect();
+class Bubble {
+    x:number;
+    y:number;
+    width:number = 55;
+    height:number = 55;
+}
+```
 
+Het is ook mogelijk om van DOM elementen de coordinaten in het browservenster op te vragen met 
+```
+var rect:ClientRect = obj.getBoundingClientRect();
+```
+
+Vervolgens kan je deze waarden ophalen uit het rect object:
+```
 rect1.left;
 rect1.top;
 rect1.bottom;
@@ -95,6 +107,6 @@ class Game {
     }
 ```
 
-[Comparing 2D coordinates](https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection)
-[Bounding Box Property](https://developer.mozilla.org/en/docs/Web/API/Element/getBoundingClientRect)
-[Game Loop](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame)
+- [Comparing 2D coordinates](https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection)
+- [Bounding Box Property](https://developer.mozilla.org/en/docs/Web/API/Element/getBoundingClientRect)
+- [Game Loop](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame)
