@@ -8,22 +8,21 @@ Door de x, y, breedte en hoogte van twee game objecten bij te houden, kan je zie
 De formule is:
 
 ```
-var rect1 = {x: 5, y: 5, width: 50, height: 50}
-var rect2 = {x: 20, y: 10, width: 10, height: 10}
+let bubble1 = new Bubble();
+let bubble2 = new Bubble();
 
-if (rect1.x < rect2.x + rect2.width &&
-   rect1.x + rect1.width > rect2.x &&
-   rect1.y < rect2.y + rect2.height &&
-   rect1.height + rect1.y > rect2.y) {
-    // collision detected!
+if (bubble1.x < bubble2.x + bubble2.width &&
+   bubble1.x + bubble1.width > bubble2.x &&
+   bubble1.y < bubble2.y + bubble2.height &&
+   bubble1.height + bubble1.y > bubble2.y) {
+    // bubble collision detected!
 }
 ```
-
-Je moet dan wel in je game object deze properties aanmaken:
+Je moet dan wel in je game object de properties aanmaken:
 ```
 class Bubble {
-    x:number;
-    y:number;
+    x:number = 100;
+    y:number = 100;
     width:number = 55;
     height:number = 55;
 }
