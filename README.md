@@ -28,19 +28,19 @@ class Bubble {
 }
 ```
 
-Het is ook mogelijk om van DOM elementen de coordinaten in het browservenster op te vragen met 
+Het is ook mogelijk om van DOM elementen de coordinaten in het browservenster op te vragen. 
 ```
 var rect:ClientRect = obj.getBoundingClientRect();
 ```
 
 Vervolgens kan je deze waarden ophalen uit het rect object:
 ```
-rect1.left;
-rect1.top;
-rect1.bottom;
-rect1.right;
-rect1.width;
-rect1.height;
+rect.left;
+rect.top;
+rect.bottom;
+rect.right;
+rect.width;
+rect.height;
 ```
 
 ## Keyboard input
@@ -104,6 +104,7 @@ class Game {
         this.calculateCollision();
         requestAnimationFrame(this.gameLoop.bind(this));
     }
+}
 ```
 
 - [Comparing 2D coordinates](https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection)
