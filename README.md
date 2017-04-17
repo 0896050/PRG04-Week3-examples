@@ -102,6 +102,7 @@ class Game {
     }
 }
 ```
+## Links
 
 - [Comparing 2D coordinates](https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection)
 - [Bounding Box Property](https://developer.mozilla.org/en/docs/Web/API/Element/getBoundingClientRect)
