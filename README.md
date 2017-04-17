@@ -2,8 +2,6 @@
 
 ## Collision detection
 
-### Coordinaten vergelijken
-
 Door de x, y, breedte en hoogte van twee game objecten bij te houden, kan je zien of ze elkaar raken.
 De formule is:
 
@@ -49,8 +47,6 @@ Om een object te kunnen besturen moeten we twee dingen doen:
 - Het object moet luisteren naar keyboard input, en zijn eigen snelheid aanpassen als er input is.
 - Het object moet geupdate worden (60 keer per seconde) om te kunnen bewegen als zijn snelheid hoger dan 0 is
 
-### Input Listener en speed
-
 ```
 class Fish {
     leftSpeed : number = 0;
@@ -85,7 +81,7 @@ class Fish {
 }
 ```
 
-### Frame animatie
+## Game Loop
 
 Met requestAnimationFrame vraag je telkens 1 nieuw frame op, waarna de move en collision detection functies worden uitgevoerd. Doordat de game loop zichzelf aanroept gaat dit eeuwig zo door.
 
