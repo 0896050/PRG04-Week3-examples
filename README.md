@@ -1,5 +1,10 @@
 # PRG04-Week3-examples
 
+- Collision detection
+- Keyboard input
+- Game Loop
+- Callback functions
+
 ## Collision detection
 
 Door de x, y, breedte en hoogte van twee game objecten bij te houden, kan je zien of ze elkaar raken.
@@ -102,6 +107,23 @@ class Game {
     }
 }
 ```
+
+## Callback functions
+
+Instance methods kan je aanroepen met `this.method()`. Echter, functies zoals setInterval en addEventListener hebben een eigen scope. Op dat moment verwijst `this` niet meer naar de instance. Je kan dit oplossen door de juiste scope mee te geven met `bind()`, of door een ES6 arrow function te gebruiken:
+
+**Scope meegeven met bind**
+```
+el.addEventListener(“click”, this.doSomething.bind(this));
+setInterval(this.doSomething.bind(this), 500);
+```
+
+**In de eigen scope blijven met => notatie**
+```
+el.addEventListener(“click”, () => this.doSomething());
+setInterval(() => this.doSomething(), 300 );
+```
+
 ## Links
 
 - [Comparing 2D coordinates](https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection)
