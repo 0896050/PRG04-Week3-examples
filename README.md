@@ -3,7 +3,7 @@
 - Collision detection
 - Keyboard input
 - Game Loop
-- Callback functions
+- Callback scope
 
 ## Collision detection
 
@@ -108,7 +108,7 @@ class Game {
 }
 ```
 
-## Callback functions
+## Callback scope
 
 Instance methods kan je aanroepen met `this.method()`. Echter, functies zoals setInterval en addEventListener hebben een eigen scope. Op dat moment verwijst `this` niet meer naar de instance. Je kan dit oplossen door de juiste scope mee te geven met `bind()`, of door een ES6 arrow function te gebruiken:
 
