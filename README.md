@@ -60,8 +60,8 @@ class Fish {
     upSpeed : number = 0;
 
     constructor(){
-        window.addEventListener("keydown", this.onKeyDown.bind(this));
-        window.addEventListener("keyup", this.onKeyUp.bind(this));
+        window.addEventListener("keydown", () => this.onKeyDown);
+        window.addEventListener("keydown", () => this.onKeyUp);
     }
     onKeyDown(event:KeyboardEvent):void {
         switch(event.keyCode){
@@ -97,13 +97,13 @@ class Game {
 
     constructor() {
         this.fish = new Fish();     
-        requestAnimationFrame(this.gameLoop.bind(this));
+        requestAnimationFrame(() => this.gameLoop());
     }
 
     gameLoop(){
         this.fish.move();
         this.calculateCollision();
-        requestAnimationFrame(this.gameLoop.bind(this));
+        requestAnimationFrame(() => this.gameLoop());
     }
 }
 ```
