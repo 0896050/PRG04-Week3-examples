@@ -128,8 +128,13 @@ window.addEventListener("keydown", (e:KeyboardEvent) => this.onKeyDown(e));
 ```
 
 **Event listeners verwijderen**
-Om een event listener te verwijderen heb je een referentie naar de aangeroepen functie nodig.
+Om een event listener te kunnen verwijderen heb je een referentie naar de aangeroepen functie nodig.
 Die referentie moet je opslaan.
+```
+this.fn = () => this.doSomething();
+window.addEventListener("keydown", this.fn);
+window.removeEventListener("keydown", this.fn);
+```
 
 
 ## UI en Fonts
