@@ -79,6 +79,7 @@ var Game = (function () {
     function Game() {
         this.f = new Fish();
         this.b = new Bubble();
+        document.getElementById("ui").innerHTML = "Pixel Aquarium";
         requestAnimationFrame(this.gameLoop.bind(this));
     }
     Game.prototype.gameLoop = function () {

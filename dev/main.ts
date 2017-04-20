@@ -10,6 +10,8 @@ class Game {
         this.f = new Fish();
         this.b = new Bubble();
 
+        document.getElementById("ui").innerHTML = "Pixel Aquarium";
+
         // start game loop        
         requestAnimationFrame(this.gameLoop.bind(this));
     }

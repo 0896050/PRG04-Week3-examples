@@ -122,10 +122,45 @@ setInterval(this.doSomething.bind(this), 500);
 ```
 el.addEventListener(“click”, () => this.doSomething());
 setInterval(() => this.doSomething(), 300 );
+
+// parameters meegeven met => notatie
+window.addEventListener("keydown", (e:KeyboardEvent) => this.onKeyDown(e));
 ```
+
+**Event listeners verwijderen**
+Om een event listener te verwijderen heb je een referentie naar de aangeroepen functie nodig.
+Die referentie moet je opslaan.
+
+
+## UI en Fonts
+[Google fonts](https://fonts.google.com/?selection.family=Press+Start+2P) bevat een aantal coole pixel fonts. Voeg deze toe aan je index.html en style.css
+```
+// index.html
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+</head>
+<body>
+  <ui id="ui"></ui>
+</body>
+
+// style.css
+ui {
+  font-family: 'Press Start 2P', cursive;
+  color:white;
+  font-size:22px;
+}
+```
+
+Vervolgens kan je met javascript de inhoud van je UI aanpassen:
+```
+document.getElementById("ui").innerHTML = "Score: 100";
+```
+
+
 
 ## Links
 
 - [Comparing 2D coordinates](https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection)
 - [Bounding Box Property](https://developer.mozilla.org/en/docs/Web/API/Element/getBoundingClientRect)
 - [Game Loop](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame)
+- [Google Fonts](https://fonts.google.com/?selection.family=Press+Start+2P)
