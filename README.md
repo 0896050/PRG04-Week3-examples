@@ -60,8 +60,8 @@ class Fish {
     upSpeed : number = 0;
 
     constructor(){
-        window.addEventListener("keydown", () => this.onKeyDown);
-        window.addEventListener("keydown", () => this.onKeyUp);
+        window.addEventListener("keydown", (e:KeyboardEvent) => this.onKeyDown(e));
+        window.addEventListener("keyup", (e:KeyboardEvent) => this.onKeyUp(e));
     }
     onKeyDown(event:KeyboardEvent):void {
         switch(event.keyCode){
