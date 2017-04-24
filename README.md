@@ -110,7 +110,7 @@ class Game {
 
 ## Callback scope
 
-Instance methods kan je aanroepen met `this.method()`. Echter, functies zoals setInterval en addEventListener hebben een eigen scope. Op dat moment verwijst `this` niet meer naar de instance. Je kan dit oplossen door de juiste scope mee te geven met `bind()`, of door een ES6 arrow function te gebruiken:
+Het keyword `this` binnen een class verwijst naar de huidige instance. Je kan properties en methods aanroepen met `this.speed` en `this.move()`. Echter, functies zoals setInterval en addEventListener hebben een **eigen scope**. Het keyword `this` in setInterval of addEventListener verwijst niet meer naar de huidige instance. Je kan dit oplossen door de juiste scope mee te geven met `bind()`, of door een ES6 arrow function te gebruiken.
 
 **Bind**
 ```
