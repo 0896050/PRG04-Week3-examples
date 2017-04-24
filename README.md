@@ -4,6 +4,8 @@
 - Keyboard input
 - Game Loop
 - Callback scope
+- Fonts
+- Rest and spread parameters
 
 ## Collision detection
 
@@ -179,8 +181,31 @@ ui {
 document.getElementById("ui").innerHTML = "Score: 100";
 ```
 
+## Rest and Spread operators
+
+Een rest parameter converteert alle waarden die in een functie binnenkomen meteen naar een array:
+```
+private myFunction(...args:Array<number>){
+    // alle waarden komen automatisch in een array
+    console.log("Het tweede argument is " + args[1]);
+}
+// je kan losse waarden doorgeven
+this.myFunction(3,6,7,8);
+```
+
+De spread operator doet het tegenovergestelde. Een array wordt automatisch als losse waarden doorgegeven.
+```
+let arr:Array<number> = [3,5,7,3,3];
+// alle waarden worden los naar myFunction gestuurd
+this.myFunction(...arr);
+```
+
 ## Links
 
+- [Arrow functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+- [Rest and spread parameters](https://rainsoft.io/how-three-dots-changed-javascript/)
+- [Typescript handbook](https://basarat.gitbooks.io/typescript/content/docs/getting-started.html)
+- [Typescript documentation](https://www.typescriptlang.org/docs/tutorial.html)
 - [Comparing 2D coordinates](https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection)
 - [Bounding Box Property](https://developer.mozilla.org/en/docs/Web/API/Element/getBoundingClientRect)
 - [Game Loop](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame)
