@@ -112,56 +112,72 @@ class Game {
 
 Instance methods kan je aanroepen met `this.method()`. Echter, functies zoals setInterval en addEventListener hebben een eigen scope. Op dat moment verwijst `this` niet meer naar de instance. Je kan dit oplossen door de juiste scope mee te geven met `bind()`, of door een ES6 arrow function te gebruiken:
 
-**Scope meegeven met bind**
+**Bind**
 ```
 el.addEventListener(“click”, this.doSomething.bind(this));
-setInterval(this.doSomething.bind(this), 500);
 ```
 
-**In de eigen scope blijven met => notatie**
+**Arrow notation**
 ```
-el.addEventListener(“click”, () => this.doSomething());
+// click
+element.addEventListener(“click”, () => this.doSomething());
+
+// interval
 setInterval(() => this.doSomething(), 300 );
 
-// parameters meegeven met => notatie
+// parameters meegeven
 window.addEventListener("keydown", (e:KeyboardEvent) => this.onKeyDown(e));
 ```
 
-**Event listeners verwijderen**
-Om een event listener te kunnen verwijderen heb je een referentie naar de aangeroepen functie nodig.
-Die referentie moet je opslaan.
+### Event Listeners verwijderen
+
+Als je een listener aan window toevoegt, dan blijft die listener altijd bestaan, zelfs als je game object wordt verwijderd.
+Het is beter om listeners te verwijderen als je ze niet meer nodig hebt.
+
 ```
-this.fn = () => this.doSomething();
-window.addEventListener("keydown", this.fn);
-window.removeEventListener("keydown", this.fn);
+class Test {
+    private callback:EventListener;
+
+    constructor(){
+        // we slaan de functie op in een variabele
+        this.callback = (e:KeyboardEvent) => this.keyWasPressed(e);
+
+        // listener toevoegen
+        window.addEventListener("keydown", this.callback);
+    }
+
+    private keyWasPressed(e:KeyboardEvent):void {
+        // omdat de functie in een variabele zit kan je removeEventListener doen
+        window.removeEventListener("keydown", this.callback);
+    }
+}
 ```
 
 
 ## UI en Fonts
 [Google fonts](https://fonts.google.com/?selection.family=Press+Start+2P) bevat een aantal coole pixel fonts. Voeg deze toe aan je index.html en style.css
+
+**HTML**
 ```
-// index.html
 <head>
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 </head>
 <body>
   <ui id="ui"></ui>
 </body>
-
-// style.css
+```
+**CSS**
+```
 ui {
   font-family: 'Press Start 2P', cursive;
   color:white;
   font-size:22px;
 }
 ```
-
-Vervolgens kan je met javascript de inhoud van je UI aanpassen:
+**Typescript**
 ```
 document.getElementById("ui").innerHTML = "Score: 100";
 ```
-
-
 
 ## Links
 
