@@ -209,4 +209,5 @@ this.myFunction(...arr);
 - [Comparing 2D coordinates](https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection)
 - [Bounding Box Property](https://developer.mozilla.org/en/docs/Web/API/Element/getBoundingClientRect)
 - [Game Loop](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame)
+- [Using Console Gamepad in the Browser](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API)
 - [Google Fonts](https://fonts.google.com/?selection.family=Press+Start+2P)
